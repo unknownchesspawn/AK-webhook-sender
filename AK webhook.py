@@ -10,16 +10,16 @@ class DiscordWebhookSender:
     def __init__(self):
         self.window = tk.Tk()
         self.window.title("AK Webhook Sender")
-        self.window.geometry("500x500")  window size 
-        self.window.configure(bg="#2E3440") background
+        self.window.geometry("500x500")  
+        self.window.configure(bg="#2E3440")  # background :)
 
-       
+        # Set the window icon
         self.set_window_icon("https://avatars.githubusercontent.com/u/194596336?v=4")
 
-
+        # Custom font
         self.custom_font = ("Arial", 10)
 
-   
+        # Create main frames
         self.input_frame = tk.Frame(self.window, bg="#2E3440")
         self.input_frame.pack(pady=10, padx=10, fill="x")
 
@@ -29,7 +29,7 @@ class DiscordWebhookSender:
         self.status_frame = tk.Frame(self.window, bg="#2E3440")
         self.status_frame.pack(pady=10, padx=10, fill="x")
 
-
+        # Create input fields
         self.webhook_url_label = tk.Label(self.input_frame, text="Webhook URL:", bg="#2E3440", fg="#D8DEE9", font=self.custom_font)
         self.webhook_url_label.grid(row=0, column=0, padx=5, pady=5, sticky="w")
         self.webhook_url_entry = tk.Entry(self.input_frame, width=50, bg="#3B4252", fg="#D8DEE9", insertbackground="#D8DEE9", font=self.custom_font)
@@ -54,7 +54,7 @@ class DiscordWebhookSender:
         self.delete_hook_checkbox = tk.Checkbutton(self.input_frame, text="Delete webhook after spam", variable=self.delete_hook_var, bg="#2E3440", fg="#D8DEE9", selectcolor="#3B4252", font=self.custom_font)
         self.delete_hook_checkbox.grid(row=4, column=1, padx=5, pady=5, sticky="w")
 
-      
+        # Create buttons (Send, Cancel, Clear)
         self.send_button = tk.Button(self.button_frame, text="Send", command=self.start_sending, bg="#4C566A", fg="#D8DEE9", activebackground="#5E81AC", activeforeground="#D8DEE9", font=self.custom_font)
         self.send_button.grid(row=0, column=0, padx=5, pady=5)
 
@@ -64,7 +64,7 @@ class DiscordWebhookSender:
         self.clear_button = tk.Button(self.button_frame, text="Clear", command=self.clear_fields, bg="#4C566A", fg="#D8DEE9", activebackground="#5E81AC", activeforeground="#D8DEE9", font=self.custom_font)
         self.clear_button.grid(row=0, column=2, padx=5, pady=5)
 
-      
+        # Create status label and progress bar
         self.status_label = tk.Label(self.status_frame, text="", bg="#2E3440", fg="#D8DEE9", font=self.custom_font)
         self.status_label.pack(pady=5)
 
